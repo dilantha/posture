@@ -7,14 +7,14 @@ import (
 )
 
 func setupRouter() *gin.Engine {
-  r := gin.Default()
-  r.GET("/", func(c *gin.Context) {
-    c.String(http.StatusOK, "pong")
+  router := gin.Default()
+  router.GET("/", func(c *gin.Context) {
+    c.String(http.StatusOK, "Posture Data")
   })
-  return r
+  return router
 }
 
 func main() {
-  r := setupRouter()
-  r.Run(":8080")
+  router := setupRouter()
+  router.Run()
 }
