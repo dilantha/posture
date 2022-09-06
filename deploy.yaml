@@ -1,0 +1,25 @@
+---
+- name: Deploy posture
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Copy systemd service file to server
+      copy:
+        src: posture.service
+        dest: /etc/systemd/system
+        owner: root
+        group: root
+
+    - name: Copy binary to server
+      copy:
+        src: posture
+        dest: /usr/local/bin
+        mode: 0755
+        owner: root
+        group: root
+
+    - name: Restart posture service
+      ansible.builtin.service:
+        name: posture
+        state: restarted

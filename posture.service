@@ -1,0 +1,8 @@
+[Unit]
+Description=Posture tracker web service
+
+[Service]
+ExecStart=/usr/local/bin/posture
+
+[Install]
+WantedBy=multi-user.target
