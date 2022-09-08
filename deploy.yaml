@@ -23,3 +23,4 @@
       ansible.builtin.service:
         name: posture
         state: restarted
+        daemon_reload: yes

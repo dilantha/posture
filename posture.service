@@ -2,6 +2,7 @@
 Description=Posture tracker web service
 
 [Service]
+Environment="GIN_MODE=release" "PORT=8088"
 ExecStart=/usr/local/bin/posture
 
 [Install]
